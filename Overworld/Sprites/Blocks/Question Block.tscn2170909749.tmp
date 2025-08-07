@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dakraqewmrdwf"]
+
+[ext_resource type="Texture2D" uid="uid://cpwnbjoxdtg1d" path="res://Overworld/Sprites/Blocks/Question Block.png" id="1_61ojj"]
+[ext_resource type="Script" uid="uid://breebqcdyf20i" path="res://Overworld/Sprites/Blocks/question_block.gd" id="1_disil"]
+[ext_resource type="Texture2D" uid="uid://bj5etmeyf765m" path="res://Overworld/Sprites/Blocks/Block Shadow.png" id="2_disil"]
+[ext_resource type="Texture2D" uid="uid://cb2qoft2c3540" path="res://Overworld/Sprites/Blocks/Empty Question Block.png" id="4_ty346"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61ojj"]
+size = Vector2(23, 13.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_disil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_61ojj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ty346")
+}],
+"loop": true,
+"name": &"Block",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+script = ExtResource("1_disil")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 3
+visibility_layer = 4
+position = Vector2(-0.5, 8.75)
+shape = SubResource("RectangleShape2D_61ojj")
+
+[node name="Shadow" type="Sprite2D" parent="Area2D"]
+visibility_layer = 4
+texture_filter = 1
+texture = ExtResource("2_disil")
+
+[node name="QuestionBlock" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(0, -74)
+sprite_frames = SubResource("SpriteFrames_disil")
+animation = &"Block"

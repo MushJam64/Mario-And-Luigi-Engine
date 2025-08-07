@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=4 uid="uid://dvlbs5l2w0pam"]
+
+[ext_resource type="PackedScene" uid="uid://plv4fonjs4si" path="res://Overworld/Sprites/Blocks/Player.tscn" id="2_ee77b"]
+[ext_resource type="Script" uid="uid://88t363lao06k" path="res://Overworld/discord_rpc.gd" id="5_h2img"]
+[ext_resource type="Texture2D" uid="uid://dkram2yh3iuev" path="res://Overworld/Camera/Tileset.png" id="6_afxa6"]
+[ext_resource type="PackedScene" uid="uid://dakraqewmrdwf" path="res://Overworld/Sprites/Blocks/Question Block.tscn" id="7_d6mfj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ee77b"]
+texture = ExtResource("6_afxa6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/custom_data_1 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/custom_data_2 = true
+
+[sub_resource type="TileSet" id="TileSet_ubprc"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "red_boundary"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "green_boundary"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "orange_reset"
+custom_data_layer_2/type = 1
+sources/2 = SubResource("TileSetAtlasSource_ee77b")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CoinBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(395, 52)
+given_item = "Coin"
+
+[node name="SyrupBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(206, 0)
+contained_item = "Syrup"
+given_item = "Syrup"
+
+[node name="MushBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(83, 0)
+contained_item = "Mushroom"
+
+[node name="HerbBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(247, 0)
+contained_item = "RefreshingHerb"
+given_item = "RefreshingHerb"
+
+[node name="1UPBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(124, 0)
+contained_item = "1UP"
+given_item = "1UP"
+
+[node name="NUTBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(165, 0)
+contained_item = "Nut"
+given_item = "Nut"
+
+[node name="BootBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(206, 33)
+contained_item = "Boots"
+given_item = "Iron Ball Boots"
+
+[node name="PantBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(83, 33)
+contained_item = "Slacks"
+given_item = "Silly Shorts"
+
+[node name="AccessoryBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(247, 33)
+contained_item = "Accessory"
+given_item = "BowserFart.gif"
+
+[node name="SockBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(124, 33)
+contained_item = "Socks"
+given_item = "Sweaty Socks"
+
+[node name="GloveBlock" parent="." instance=ExtResource("7_d6mfj")]
+position = Vector2(165, 33)
+contained_item = "Gloves"
+given_item = "Giants Glove"
+
+[node name="Bros" parent="." instance=ExtResource("2_ee77b")]
+
+[node name="DiscordRPC" type="Node" parent="."]
+script = ExtResource("5_h2img")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAACAPn/AgAAAAAAAAADAPn/AgAAAAAAAAAEAPn/AgAAAAAAAAAFAPn/AgAAAAAAAAAGAPn/AgAAAAAAAAAHAPn/AgAAAAAAAAAIAPn/AgAAAAAAAAACAPr/AgACAAAAAAADAPr/AgACAAAAAAAEAPr/AgACAAAAAAAFAPr/AgACAAAAAAAGAPr/AgACAAAAAAAHAPr/AgACAAAAAAAIAPr/AgACAAAAAAD8//3/AgABAAAAAAD8//7/AgABAAAAAAD8////AgABAAAAAAD8/wAAAgABAAAAAAD8/wEAAgABAAAAAAD8/wIAAgABAAAAAAD8/wMAAgABAAAAAAD9//3/AgACAAAAAAD9//7/AgACAAAAAAD9////AgACAAAAAAD9/wAAAgACAAAAAAD9/wEAAgACAAAAAAD9/wIAAgACAAAAAAD9/wMAAgACAAAAAAA=")
+tile_set = SubResource("TileSet_ubprc")

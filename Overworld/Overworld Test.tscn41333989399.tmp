@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvlbs5l2w0pam"]
+
+[ext_resource type="Script" uid="uid://bk53nw7ahed63" path="res://Overworld/mario.gd" id="1_b1045"]
+[ext_resource type="Texture2D" uid="uid://b8i76pdyxcohq" path="res://Overworld/Sprites/Mario Sprite OW.png" id="1_koo54"]
+[ext_resource type="Texture2D" uid="uid://drx1jybsucoqi" path="res://Overworld/Sprites/Luigi Sprite OW.png" id="3_ee77b"]
+[ext_resource type="Script" uid="uid://b3gu4ffv2cnl6" path="res://Overworld/luigi.gd" id="3_h2img"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Luigi" type="CharacterBody2D" parent="."]
+script = ExtResource("3_h2img")
+
+[node name="Sprite2D" type="Sprite2D" parent="Luigi"]
+texture_filter = 1
+texture = ExtResource("3_ee77b")
+
+[node name="Mario" type="CharacterBody2D" parent="."]
+script = ExtResource("1_b1045")
+move_speed = null
+jump_force = null
+gravity = null
+
+[node name="Sprite2D" type="Sprite2D" parent="Mario"]
+texture_filter = 1
+texture = ExtResource("1_koo54")

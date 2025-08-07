@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnb2pqrkhwhfk"]
+
+[ext_resource type="PackedScene" uid="uid://c410pihq8yn4d" path="res://Battle/Sprites/BattleBlocks.tscn" id="1_2ldvt"]
+[ext_resource type="Script" uid="uid://cljleeq37qwvq" path="res://Battle/Battle_Room.gd" id="1_xd5ub"]
+[ext_resource type="Script" uid="uid://cu3cc07loum5t" path="res://Battle/BattleScript.gd" id="2_ch2j3"]
+[ext_resource type="Texture2D" uid="uid://clr2ow0cyji0f" path="res://Battle/Sprites/Maps/The Mario & Luigi Engine (DEBUG) 8_7_2025 10_03_34 AM.png" id="3_aigfv"]
+[ext_resource type="Script" uid="uid://88t363lao06k" path="res://Overworld/discord_rpc.gd" id="5_ch2j3"]
+[ext_resource type="Texture2D" uid="uid://b8i76pdyxcohq" path="res://Overworld/Sprites/Mario Sprite OW.png" id="5_w7ckf"]
+[ext_resource type="Texture2D" uid="uid://drx1jybsucoqi" path="res://Overworld/Sprites/Luigi Sprite OW.png" id="6_ch2j3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ldvt"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2ldvt"]
+viewport_path = NodePath("Node2D/SubViewport")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xd5ub")
+room = "A Debug Battle"
+location = "Fighting on the Debug"
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_ch2j3")
+
+[node name="TheMario&LuigiEngine(debug)872025100334Am" type="Sprite2D" parent="Node2D"]
+visible = false
+texture = ExtResource("3_aigfv")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+
+[node name="Mario" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(-200, -50)
+scale = Vector2(3, 3)
+texture = ExtResource("5_w7ckf")
+
+[node name="Luigi" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(-300, 96)
+scale = Vector2(3, 3)
+texture = ExtResource("6_ch2j3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node2D"]
+offset = Vector2(-200, -200)
+transform = Transform2D(1, 0, 0, 1, -200, -200)
+
+[node name="Panel" type="Panel" parent="Node2D/CanvasLayer"]
+offset_right = 800.0
+offset_bottom = 480.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2ldvt")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/CanvasLayer/Panel"]
+clip_contents = true
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+texture = SubResource("ViewportTexture_2ldvt")
+
+[node name="SubViewport" type="SubViewport" parent="Node2D"]
+transparent_bg = true
+size = Vector2i(800, 480)
+size_2d_override_stretch = true
+
+[node name="BattleBlocks" parent="Node2D/SubViewport" instance=ExtResource("1_2ldvt")]
+
+[node name="DiscordRPC" type="Node" parent="."]
+script = ExtResource("5_ch2j3")

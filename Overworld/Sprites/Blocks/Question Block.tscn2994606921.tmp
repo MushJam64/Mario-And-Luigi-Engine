@@ -1,0 +1,109 @@
+[gd_scene load_steps=14 format=3 uid="uid://dakraqewmrdwf"]
+
+[ext_resource type="Texture2D" uid="uid://cpwnbjoxdtg1d" path="res://Overworld/Sprites/Blocks/Question Block.png" id="1_61ojj"]
+[ext_resource type="Script" uid="uid://breebqcdyf20i" path="res://Overworld/Sprites/Blocks/question_block.gd" id="1_disil"]
+[ext_resource type="Texture2D" uid="uid://bj5etmeyf765m" path="res://Overworld/Sprites/Blocks/Block Shadow.png" id="2_disil"]
+[ext_resource type="Texture2D" uid="uid://cb2qoft2c3540" path="res://Overworld/Sprites/Blocks/Empty Question Block.png" id="4_ty346"]
+[ext_resource type="Texture2D" uid="uid://dkx5mb28aafkx" path="res://Overworld/Sprites/Blocks/1UP.png" id="5_iokuw"]
+[ext_resource type="Texture2D" uid="uid://dnhna8iyxgcvc" path="res://Overworld/Sprites/Blocks/Coin.png" id="5_kemfc"]
+[ext_resource type="Texture2D" uid="uid://c1gbhdt1fe4s2" path="res://Overworld/Sprites/Blocks/Mushroom.png" id="6_iokuw"]
+[ext_resource type="Texture2D" uid="uid://glj6ag7fr6l0" path="res://Overworld/Sprites/Blocks/NUT.png" id="8_bijll"]
+[ext_resource type="Texture2D" uid="uid://br1t3or4tydhx" path="res://Overworld/Sprites/Blocks/Herb.png" id="9_ah8np"]
+[ext_resource type="Texture2D" uid="uid://drnlmlb1bc8er" path="res://Overworld/Sprites/Blocks/Syrup.png" id="9_un5am"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kemfc"]
+size = Vector2(23, 13.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iokuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_61ojj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ty346")
+}],
+"loop": true,
+"name": &"Block",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxp5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_iokuw")
+}],
+"loop": true,
+"name": &"1UP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kemfc")
+}],
+"loop": true,
+"name": &"Coin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_iokuw")
+}],
+"loop": true,
+"name": &"Mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bijll")
+}],
+"loop": true,
+"name": &"Nut",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ah8np")
+}],
+"loop": true,
+"name": &"RefreshingHerb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_un5am")
+}],
+"loop": true,
+"name": &"Syrup",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 3
+script = ExtResource("1_disil")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 4
+position = Vector2(-0.5, 8.75)
+shape = SubResource("RectangleShape2D_kemfc")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+visibility_layer = 4
+texture_filter = 1
+texture = ExtResource("2_disil")
+
+[node name="QuestionBlock" type="AnimatedSprite2D" parent="."]
+z_index = 20
+texture_filter = 1
+position = Vector2(0, -74)
+sprite_frames = SubResource("SpriteFrames_iokuw")
+animation = &"Block"
+
+[node name="Item" type="AnimatedSprite2D" parent="QuestionBlock"]
+visible = false
+texture_filter = 1
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_pxp5q")
+animation = &"RefreshingHerb"

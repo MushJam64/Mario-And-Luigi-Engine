@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://c410pihq8yn4d"]
+
+[ext_resource type="Script" uid="uid://dg86jpoa13f71" path="res://Battle/Sprites/battle_blocks.gd" id="1_bgk18"]
+[ext_resource type="Texture2D" uid="uid://bsmgnwwh4m5ep" path="res://Battle/Sprites/Jump.png" id="1_t1foj"]
+[ext_resource type="AudioStream" uid="uid://b6dhqkjh6bhvy" path="res://Battle/Sprites/Block_Choosen.wav" id="2_d8yqg"]
+[ext_resource type="Texture2D" uid="uid://s7rw7c1lla7u" path="res://Battle/Sprites/Hammer.png" id="2_pfhqu"]
+[ext_resource type="AudioStream" uid="uid://6rtrsauifh5b" path="res://Battle/Sprites/Choose.wav" id="3_sj8et"]
+[ext_resource type="AudioStream" uid="uid://cq2m475t1deyy" path="res://Battle/Sprites/Block_Select.wav" id="4_sj8et"]
+[ext_resource type="Texture2D" uid="uid://dm73cjuh5rnn1" path="res://Battle/Sprites/Bros.png" id="5_x4bnm"]
+[ext_resource type="Texture2D" uid="uid://dvp3pj7fuxr0q" path="res://Battle/Sprites/Item.png" id="6_u4n6x"]
+[ext_resource type="Texture2D" uid="uid://c2s2xw0v6sg84" path="res://Battle/Sprites/Flee.png" id="7_wuy37"]
+[ext_resource type="Texture2D" uid="uid://d2mftvroj2ql4" path="res://Battle/Sprites/Badge.png" id="8_wuy37"]
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("frontBlock", "rightfrontBlock", "rightbackBlock", "backBlock", "leftbackBlock", "leftfrontBlock")]
+script = ExtResource("1_bgk18")
+frontBlock = NodePath("Jump")
+rightfrontBlock = NodePath("Bros")
+rightbackBlock = NodePath("Item")
+backBlock = NodePath("Badge")
+leftbackBlock = NodePath("Flee")
+leftfrontBlock = NodePath("Hammer")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996917, 0.0784591, 0, -0.0784591, 0.996917, 0, 0.310717, -0.0105083)
+
+[node name="BlockSelectionSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d8yqg")
+
+[node name="EnemySelectionSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sj8et")
+
+[node name="RotationSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sj8et")
+
+[node name="Jump" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.22134)
+
+[node name="Sprite3D" type="Sprite3D" parent="Jump"]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_t1foj")
+
+[node name="Bros" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346, 0, -1.44234)
+
+[node name="Sprite3D" type="Sprite3D" parent="Bros"]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_x4bnm")
+
+[node name="Item" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346, 0, -1.706)
+
+[node name="Sprite3D" type="Sprite3D" parent="Item"]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("6_u4n6x")
+
+[node name="Badge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.90534)
+
+[node name="Sprite3D" type="Sprite3D" parent="Badge"]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("8_wuy37")
+
+[node name="Flee" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.346, 0, -1.70634)
+
+[node name="Sprite3D" type="Sprite3D" parent="Flee"]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("7_wuy37")
+
+[node name="Hammer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.346, 0, -1.442)
+
+[node name="Sprite3D" type="Sprite3D" parent="Hammer"]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_pfhqu")
