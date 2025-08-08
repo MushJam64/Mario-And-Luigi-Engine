@@ -1,6 +1,8 @@
+Camera2D
+RichTextLabel
+ColorRect
 Node2D
 Sprite2D
-Camera2D
 TextureRect
 Panel
 CanvasLayer
@@ -10,5 +12,3 @@ AnimatedSprite2D
 CollisionShape2D
 CharacterBody2D
 TileMapLayer
-TileMap
-Node

@@ -1,13 +1,9 @@
-res://Battle/BattleBlocks.tscn
+res://DialougeTest.gd
+res://Test Dialouge.tscn
+res://Battle/Sprites/BattleBlocks.tscn
 res://Overworld/Overworld Test.tscn
 res://Overworld/Sprites/Blocks/Player.tscn
 res://Overworld/Overworld Camera.tscn
-res://Battle/Sprites/BattleBlocks.tscn
 res://Battle/Test Battle.tscn
-res://Battle/Battle_Room.gd
-res://Overworld/room.gd
-res://Battle/BattleScript.gd
-res://Battle/Sprites/battle_blocks.gd
-res://Overworld/luigi.gd
-res://Overworld/mario.gd
-res://globals.gd
+res://Dialouge/dialouge_ui.tscn
+res://dialouge_ui.gd
