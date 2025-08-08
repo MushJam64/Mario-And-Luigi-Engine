@@ -14,22 +14,23 @@ var block_opacity: Array[float]
 
 var rotate_direction := 1
 var current_player_index := 0
-var state := "selecting" # "selecting", "targeting", "executing"
+var state := "selecting" # "selecting", "submenu", "targeting", "executing"
 var fade_counter := 0
 var pending_execution := false
 var last_selected_index := 0
 var awaiting_timer := false
+
 var input_repeat_timer := 0.0
 var input_initial_delay := 0.25
-var input_repeat_delay := 0.1
+var input_repeat_delay := 0.12
 var input_holding := false
-var input_last_direction := 0    # 1 for left, -1 for right, 0 for none
+var input_last_direction := 0
 
 func _ready():
 	blocks = [frontBlock, rightfrontBlock, rightbackBlock, backBlock, leftbackBlock, leftfrontBlock]
-	layout_positions = []
-	target_indices = []
-	block_opacity = []
+	layout_positions.clear()
+	target_indices.clear()
+	block_opacity.clear()
 
 	for block in blocks:
 		layout_positions.append(block.position)
@@ -42,88 +43,110 @@ func _ready():
 
 func _process(delta):
 	if state == "selecting":
-		var left_pressed = Input.is_action_pressed("Left")
-		var right_pressed = Input.is_action_pressed("Right")
+		handle_rotation_input(delta)
+	elif state == "submenu":
+		handle_submenu_input()
+	elif state == "targeting":
+		handle_targeting_input()
 
-		var current_direction = 0
-		if left_pressed:
-			current_direction = 1
-		elif right_pressed:
-			current_direction = -1
+	var player_input := get_current_player_input()
+	if Input.is_action_just_pressed(player_input):
+		if state == "selecting":
+			on_block_confirmed()
+		elif state == "submenu":
+			print("Submenu selection confirmed, now targeting.")
+			$BlockSelectionSoundPlayer.play()
+			state = "targeting"
+		elif state == "targeting" and not awaiting_timer:
+			start_execution()
 
-		if current_direction != 0:
-			if not input_holding or current_direction != input_last_direction:
+func handle_rotation_input(delta):
+	var left_pressed = Input.is_action_pressed("Left")
+	var right_pressed = Input.is_action_pressed("Right")
+
+	var current_direction = 0
+	if left_pressed:
+		current_direction = 1
+	elif right_pressed:
+		current_direction = -1
+
+	if current_direction != 0:
+		if not input_holding or current_direction != input_last_direction:
+			rotate_direction = current_direction
+			rotate_targets()
+			$RotationSoundPlayer.play()
+			update_debug_text()
+
+			input_repeat_timer = input_initial_delay
+			input_holding = true
+			input_last_direction = current_direction
+		else:
+			input_repeat_timer -= delta
+			if input_repeat_timer <= 0.0:
 				rotate_direction = current_direction
 				rotate_targets()
 				$RotationSoundPlayer.play()
 				update_debug_text()
-				
-				input_repeat_timer = input_initial_delay
-				input_holding = true
-				input_last_direction = current_direction
-			else:
-				input_repeat_timer -= delta
-				if input_repeat_timer <= 0.0:
-					rotate_direction = current_direction
-					rotate_targets()
-					$RotationSoundPlayer.play()
-					update_debug_text()
-					
-					input_repeat_timer = input_repeat_delay
-		else:
-			# No left/right presses, reset state
-			input_holding = false
-			input_last_direction = 0
-			input_repeat_timer = 0.0
-	if state == "targeting" and Input.is_action_just_pressed("UI_Cancel"):
-			print("Going back to move selection.")
-			state = "selecting"
-			fade_in_with_spawn()
-			return  # Exit early to prevent selecting a target on the same frame
 
-	var player_input := get_current_player_input()
-	if Input.is_action_just_pressed(player_input):
-		
+				input_repeat_timer = input_repeat_delay
+	else:
+		input_holding = false
+		input_last_direction = 0
+		input_repeat_timer = 0.0
 
-		if state == "selecting":
-			$BlockSelectionSoundPlayer.play()
-			fade_out_all_sprites()
-			last_selected_index = target_indices.find(0)
-			var selected_block = blocks[last_selected_index].name
-			print("Player %d selected: %s" % [((current_player_index % 2) + 1), selected_block])
+func handle_submenu_input():
+	if Input.is_action_just_pressed("UI_Cancel"):
+		print("Closing submenu, back to selecting.")
+		awaiting_timer = false
+		state = "selecting"
+		fade_in_with_spawn()
 
-			var selected_block_index = target_indices.find(0)
-			var selected_block_node = blocks[selected_block_index]
-			var original_pos = layout_positions[0]
-			var raised_pos = original_pos + Vector3(0, 0.10, 0)
+func handle_targeting_input():
+	if Input.is_action_just_pressed("UI_Cancel"):
+		print("Going back to move selection.")
+		state = "selecting"
+		fade_in_with_spawn()
 
-			var tween := create_tween()
-			tween.tween_property(selected_block_node, "position", raised_pos, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-			tween.tween_property(selected_block_node, "scale", Vector3(1.2, 1.2, 1.2), 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-			tween.tween_property(selected_block_node, "position", original_pos, 0.1).set_delay(0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-			tween.tween_property(selected_block_node, "scale", Vector3.ONE, 0.1).set_delay(0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+func on_block_confirmed():
+	$BlockSelectionSoundPlayer.play()
+	fade_out_all_sprites()
+	last_selected_index = target_indices.find(0)
+	var selected_block = blocks[last_selected_index].name
+	print("Player %d selected: %s" % [((current_player_index % 2) + 1), selected_block])
 
-			state = "targeting"
-			
+	var selected_block_index = target_indices.find(0)
+	var selected_block_node = blocks[selected_block_index]
+	var original_pos = layout_positions[0]
+	var raised_pos = original_pos + Vector3(0, 0.10, 0)
 
-		elif state == "targeting" and not awaiting_timer:
-			pending_execution = true
-			state = "executing"
-			print("Player %d's move is being executed" % ((current_player_index % 2) + 1))
-			$EnemySelectionSoundPlayer.play()
-			awaiting_timer = true
-			await get_tree().create_timer(5.0).timeout
-			current_player_index = (current_player_index + 1) % 2
-			state = "selecting"
-			fade_in_with_spawn()
+	var tween := create_tween()
+	tween.tween_property(selected_block_node, "position", raised_pos, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(selected_block_node, "scale", Vector3(1.2, 1.2, 1.2), 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(selected_block_node, "position", original_pos, 0.1).set_delay(0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.tween_property(selected_block_node, "scale", Vector3.ONE, 0.1).set_delay(0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+
+	if selected_block in ["Bros", "Item"]:
+		print("Opening submenu for %s" % selected_block)
+		state = "submenu"
+	else:
+		state = "targeting"
+
+func start_execution():
+	pending_execution = true
+	state = "executing"
+	print("Player %d's move is being executed" % ((current_player_index % 2) + 1))
+	$EnemySelectionSoundPlayer.play()
+	awaiting_timer = true
+	await get_tree().create_timer(5.0).timeout
+	current_player_index = (current_player_index + 1) % 2
+	state = "selecting"
+	fade_in_with_spawn()
 
 func get_current_player_input() -> String:
 	if current_player_index % 2 == 0:
 		return "Jump_A"
-	elif current_player_index % 2 == 1:
-		return "Jump_B"
 	else:
-		return "Jump_A"
+		return "Jump_B"
 
 func rotate_targets():
 	for i in range(target_indices.size()):
@@ -131,7 +154,6 @@ func rotate_targets():
 		if target_indices[i] < 0:
 			target_indices[i] += blocks.size()
 
-	# Smooth move blocks to new positions
 	for i in range(blocks.size()):
 		var block = blocks[i]
 		var target_pos = layout_positions[target_indices[i]]
