@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://2r78grswskrl"]
 
-[ext_resource type="Script" uid="uid://710ofjlt0agb" path="res://dialouge_ui.gd" id="1_hifji"]
-[ext_resource type="Texture2D" uid="uid://c73y36dj2bmp3" path="res://Dialouge/Dialouge Boxes/Dialouge Box Normal.png" id="2_p7g0j"]
-[ext_resource type="FontFile" uid="uid://sinptcnfenlj" path="res://Dialouge/BIS FONT.otf" id="3_46rjy"]
+[ext_resource type="Script" uid="uid://710ofjlt0agb" path="res://Dialogue/dialogue_ui.gd" id="1_hifji"]
+[ext_resource type="Texture2D" uid="uid://c73y36dj2bmp3" path="res://Dialogue/Dialogue Boxes/Dialogue Box Normal.png" id="2_p7g0j"]
+[ext_resource type="FontFile" uid="uid://sinptcnfenlj" path="res://Dialogue/BIS FONT.otf" id="3_46rjy"]
 
 [node name="DialougeUI" type="Control"]
 layout_mode = 3

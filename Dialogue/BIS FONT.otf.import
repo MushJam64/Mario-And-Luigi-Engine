@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://sinptcnfenlj"
-path="res://.godot/imported/BIS FONT.otf-c08db6591515543c10b04064fbed5a1c.fontdata"
+path="res://.godot/imported/BIS FONT.otf-1abcc259add75de9c6ac96cc9c5d64ca.fontdata"
 
 [deps]
 
-source_file="res://Dialouge/BIS FONT.otf"
-dest_files=["res://.godot/imported/BIS FONT.otf-c08db6591515543c10b04064fbed5a1c.fontdata"]
+source_file="res://Dialogue/BIS FONT.otf"
+dest_files=["res://.godot/imported/BIS FONT.otf-1abcc259add75de9c6ac96cc9c5d64ca.fontdata"]
 
 [params]
 

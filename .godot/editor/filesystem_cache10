@@ -1,11 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1754615978
-dialouge test.gd::GDScript/GDScript::2497192120663028873::1754615559::0::1::::<>Node2D<><>0<>0<><>::
-DialougeTest.gd::GDScript/GDScript::2670584353888764475::1754615739::0::1::::<>Node2D<><>0<>0<><>::
-dialouge_ui.gd::GDScript/GDScript::2301260021002573925::1754615878::0::1::::<>Control<><>0<>0<><>::
+::res://::1754656376
 globals.gd::GDScript/GDScript::8384503883014155929::1754578723::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::6024352815980909315::1754481381::1754481395::1::::<><><>0<>0<>ce378ddfcd4d1b28dea876a20d168268<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-Test Dialouge.tscn::PackedScene/PackedScene::8843982323828252749::1754615880::0::1::::<><><>0<>0<><>::uid://bebwetb5qck1p::::res://DialougeTest.gd<>uid://2r78grswskrl::::res://Dialouge/dialouge_ui.tscn
 ::res://addons/::1754578919
 ::res://addons/discord-rpc-gd/::1754578919
 Debug.svg::CompressedTexture2D/CompressedTexture2D::1414570589633831756::1754531600::1754531601::1::::<><><>0<>0<>13438a2311b99e7bbc65bb9c9b3d0393<>res://.godot/imported/Debug.svg-d4cb8599fa7926b76a2d6e40d2efd949.ctex::
@@ -29,14 +25,14 @@ discord_autoload.gd::GDScript/GDScript::8846548933616121724::1754531601::0::1:::
 Checked.svg::CompressedTexture2D/CompressedTexture2D::8083066295081234619::1754531601::1754531601::1::::<><><>0<>0<>867c92a4d77e25fe0bc434868855a474<>res://.godot/imported/Checked.svg-80704e37f30c24e2ec3dfc0955f5f21c.ctex::
 circle.svg::CompressedTexture2D/CompressedTexture2D::8498865176304625629::1754531601::1754531601::1::::<><><>0<>0<>c1e0ee2bb4e6466f9bc351ccbd475f26<>res://.godot/imported/circle.svg-d0b0579c9433c6250a5869daf4f70024.ctex::
 Unchecked.svg::CompressedTexture2D/CompressedTexture2D::5781190569803204660::1754531601::1754531601::1::::<><><>0<>0<>075986c2ec9b9501f7b51c06f80144a3<>res://.godot/imported/Unchecked.svg-b526adfd78f7b1577fc3c10a8ea626ee.ctex::
-::res://Battle/::1754615880
+::res://Battle/::1754654530
 BattleScript.gd::GDScript/GDScript::6234547185870660511::1754575398::0::1::::<>Node2D<><>0<>0<><>::
 Battle_Room.gd::GDScript/GDScript::5564173313413027890::1754574502::0::1::::<>Node2D<><>0<>0<><>::
-Test Battle.tscn::PackedScene/PackedScene::3302607041554708720::1754615880::0::1::::<><><>0<>0<><>::uid://c410pihq8yn4d::::res://Battle/Sprites/BattleBlocks.tscn<>uid://cljleeq37qwvq::::res://Battle/Battle_Room.gd<>uid://cu3cc07loum5t::::res://Battle/BattleScript.gd<>uid://clr2ow0cyji0f::::res://Battle/Sprites/Maps/The Mario & Luigi Engine (DEBUG) 8_7_2025 10_03_34 AM.png<>uid://88t363lao06k::::res://Overworld/discord_rpc.gd<>uid://b8i76pdyxcohq::::res://Overworld/Sprites/Mario Sprite OW.png<>uid://drx1jybsucoqi::::res://Overworld/Sprites/Luigi Sprite OW.png
-::res://Battle/Sprites/::1754615880
+Test Battle.tscn::PackedScene/PackedScene::3302607041554708720::1754654530::0::1::::<><><>0<>0<><>::uid://c410pihq8yn4d::::res://Battle/Sprites/BattleBlocks.tscn<>uid://cljleeq37qwvq::::res://Battle/Battle_Room.gd<>uid://cu3cc07loum5t::::res://Battle/BattleScript.gd<>uid://clr2ow0cyji0f::::res://Battle/Sprites/Maps/The Mario & Luigi Engine (DEBUG) 8_7_2025 10_03_34 AM.png<>uid://88t363lao06k::::res://Overworld/discord_rpc.gd<>uid://b8i76pdyxcohq::::res://Overworld/Sprites/Mario Sprite OW.png<>uid://drx1jybsucoqi::::res://Overworld/Sprites/Luigi Sprite OW.png
+::res://Battle/Sprites/::1754654529
 Back.wav::AudioStreamWAV/AudioStreamWAV::8978266968600725511::1754487005::1754487005::1::::<><><>0<>0<>48bac7df2206993889e921e95716b2aa<>res://.godot/imported/Back.wav-83a1e3c304ed05727fb5e6d7ee5d0cc7.sample::
 Badge.png::CompressedTexture2D/CompressedTexture2D::9079472007304151355::1754538454::1754538829::1::::<><><>0<>0<>6e2994add0fdeb6899d02ccb4f20cf19<>res://.godot/imported/Badge.png-89536595419cee308b43cf69ae0fa839.ctex::
-BattleBlocks.tscn::PackedScene/PackedScene::6863536797994887713::1754615880::0::1::::<><><>0<>0<><>::uid://dg86jpoa13f71::::res://Battle/Sprites/battle_blocks.gd<>uid://bsmgnwwh4m5ep::::res://Battle/Sprites/Jump.png<>uid://b6dhqkjh6bhvy::::res://Battle/Sprites/Block_Choosen.wav<>uid://s7rw7c1lla7u::::res://Battle/Sprites/Hammer.png<>uid://6rtrsauifh5b::::res://Battle/Sprites/Choose.wav<>uid://cq2m475t1deyy::::res://Battle/Sprites/Block_Select.wav<>uid://dm73cjuh5rnn1::::res://Battle/Sprites/Bros.png<>uid://dvp3pj7fuxr0q::::res://Battle/Sprites/Item.png<>uid://c2s2xw0v6sg84::::res://Battle/Sprites/Flee.png<>uid://d2mftvroj2ql4::::res://Battle/Sprites/Badge.png
+BattleBlocks.tscn::PackedScene/PackedScene::6863536797994887713::1754654529::0::1::::<><><>0<>0<><>::uid://dg86jpoa13f71::::res://Battle/Sprites/battle_blocks.gd<>uid://bsmgnwwh4m5ep::::res://Battle/Sprites/Jump.png<>uid://b6dhqkjh6bhvy::::res://Battle/Sprites/Block_Choosen.wav<>uid://s7rw7c1lla7u::::res://Battle/Sprites/Hammer.png<>uid://6rtrsauifh5b::::res://Battle/Sprites/Choose.wav<>uid://cq2m475t1deyy::::res://Battle/Sprites/Block_Select.wav<>uid://dm73cjuh5rnn1::::res://Battle/Sprites/Bros.png<>uid://dvp3pj7fuxr0q::::res://Battle/Sprites/Item.png<>uid://c2s2xw0v6sg84::::res://Battle/Sprites/Flee.png<>uid://d2mftvroj2ql4::::res://Battle/Sprites/Badge.png
 battle_blocks.gd::GDScript/GDScript::7650418687225740654::1754612493::0::1::::<>Node3D<><>0<>0<><>::
 BATTLE_COMMAND_DESICION02.wav::AudioStreamWAV/AudioStreamWAV::4679473252056183243::1754485583::1754485583::1::::<><><>0<>0<>384af9db3f49b6607ea5a19f62279842<>res://.godot/imported/BATTLE_COMMAND_DESICION02.wav-df3ab5aaaccf168d320711bde15ee0a8.sample::
 BATTLE_LIST_CHOICE.wav::AudioStreamWAV/AudioStreamWAV::979049158852919339::1754486394::1754486394::1::::<><><>0<>0<>95875d124919f63200cca91edfd5d980<>res://.godot/imported/BATTLE_LIST_CHOICE.wav-7c6115fa829e9704b12619ecfa4223f9.sample::
@@ -57,28 +53,31 @@ Battle background test.png::CompressedTexture2D/CompressedTexture2D::35551462049
 Mario & Luigi_ Bowser's Inside Story - All Bosses (No Damage) - YouTube - 0-10-32.png::CompressedTexture2D/CompressedTexture2D::8570697485267963333::1754573893::1754573893::1::::<><><>0<>0<>d8650f41eb4f09aeaed65758b04ffe39<>res://.godot/imported/Mario & Luigi_ Bowser's Inside Story - All Bosses (No Damage) - YouTube - 0-10-32.png-55c5c227c3a34164cfc368bc92c95b8f.ctex::
 The Mario & Luigi Engine (DEBUG) 8_7_2025 9_40_23 AM.png::CompressedTexture2D/CompressedTexture2D::2086338370452769759::1754574035::1754574035::1::::<><><>0<>0<>4a9d580af7bfa74a6e1553a7b37f619f<>res://.godot/imported/The Mario & Luigi Engine (DEBUG) 8_7_2025 9_40_23 AM.png-65a0d25b0a8c7ab2631500e77dfd5dbd.ctex::
 The Mario & Luigi Engine (DEBUG) 8_7_2025 10_03_34 AM.png::CompressedTexture2D/CompressedTexture2D::5581678623400057919::1754575437::1754575437::1::::<><><>0<>0<>7c86ca277b39aa7fc0ed4fed1ea409ac<>res://.godot/imported/The Mario & Luigi Engine (DEBUG) 8_7_2025 10_03_34 AM.png-e42ea1722d49b1f0310445c60becbe5b.ctex::
-::res://Dialouge/::1754615978
-BIS FONT.otf::FontFile::1280731316962374979::1754615965::1754615979::1::::<><><>0<>0<>f928993c514294b4b806fbc5a8015684<>res://.godot/imported/BIS FONT.otf-c08db6591515543c10b04064fbed5a1c.fontdata::
-dialouge_ui.tscn::PackedScene/PackedScene::1932195417263011557::1754615880::0::1::::<><><>0<>0<><>::uid://710ofjlt0agb::::res://dialouge_ui.gd<>uid://c73y36dj2bmp3::::res://Dialouge/Dialouge Boxes/Dialouge Box Normal.png
-::res://Dialouge/Dialouge Boxes/::1754615634
-Dialouge Box Angry.png::CompressedTexture2D/CompressedTexture2D::508719152498794563::1754613249::1754615634::1::::<><><>0<>0<>e5d17552c65f8a9d799a51b90ba2c879<>res://.godot/imported/Dialouge Box Angry.png-7b7f7208ff12b9c0a79da7cbac9654e1.ctex::
-Dialouge Box Normal.png::CompressedTexture2D/CompressedTexture2D::7078195784275965666::1754613232::1754615634::1::::<><><>0<>0<>071fe63aa27fc00a55ad9feab780982a<>res://.godot/imported/Dialouge Box Normal.png-1f6d1ce6404f7ddfcf211b9a26112c67.ctex::
+::res://Dialogue/::1754656376
+BIS FONT.otf::FontFile/FontFile::1280731316962374979::1754615965::1754656309::1::::<><><>0<>0<>132d9b4776d87a9db11c8c8a9a4fa01f<>res://.godot/imported/BIS FONT.otf-1abcc259add75de9c6ac96cc9c5d64ca.fontdata::
+dialogue_ui.gd::GDScript/GDScript::2301260021002573925::1754616494::0::1::::<>Control<><>0<>0<><>::
+dialogue_ui.tscn::PackedScene::1932195417263011557::1754656365::0::1::::<><><>0<>0<><>::uid://710ofjlt0agb::::res://Dialogue/dialogue_ui.gd<>uid://c73y36dj2bmp3::::res://Dialogue/Dialogue Boxes/Dialogue Box Normal.png<>uid://sinptcnfenlj::::res://Dialogue/BIS FONT.otf
+DialougeTest.gd::GDScript/GDScript::2670584353888764475::1754616836::0::1::::<>Node2D<><>0<>0<><>::
+Test Dialogue.tscn::PackedScene::8843982323828252749::1754656381::0::1::::<><><>0<>0<><>::uid://bebwetb5qck1p::::res://Dialogue/DialougeTest.gd<>uid://2r78grswskrl::::res://Dialogue/dialogue_ui.tscn
+::res://Dialogue/Dialogue Boxes/::1754656323
+Dialogue Box Angry.png::CompressedTexture2D/CompressedTexture2D::508719152498794563::1754613249::1754656319::1::::<><><>0<>0<>66892c51c848696fb40dea55d0068c89<>res://.godot/imported/Dialogue Box Angry.png-7db6c5adcf8dfe2ebb4fcab378abe086.ctex::
+Dialogue Box Normal.png::CompressedTexture2D/CompressedTexture2D::7078195784275965666::1754613232::1754656323::1::::<><><>0<>0<>0ef2af27548b61fbf024686bce1e7ad2<>res://.godot/imported/Dialogue Box Normal.png-5966594f23a2f48692d913a8cb2c81bf.ctex::
 ::res://Misc Assets/::1754578919
 Mario and luigi Engine Logo.png::CompressedTexture2D/CompressedTexture2D::8853536410718273822::1754532936::1754532954::1::::<><><>0<>0<>e84653afa5d3ecb637c99c666456a44e<>res://.godot/imported/Mario and luigi Engine Logo.png-0b37319b6079f1d288b3d873b94f5d9a.ctex::
 Mario and luigi thing Logo.png::CompressedTexture2D/CompressedTexture2D::1000284771579358123::1754531513::1754532954::1::::<><><>0<>0<>3d25b4457dbf4215728ed22c87041f4a<>res://.godot/imported/Mario and luigi thing Logo.png-7fe16810adea9f92b2d4e6f3c5a8c0bc.ctex::
-::res://Overworld/::1754615880
+::res://Overworld/::1754656277
 discord_rpc.gd::GDScript/GDScript::2385561603009689180::1754571553::0::1::::<>Node<><>0<>0<><>::
 luigi.gd::GDScript/GDScript::4365360971292029545::1754578665::0::1::::<>CharacterBody2D<><>0<>0<><>::
 mario.gd::GDScript/GDScript::3151964948770403414::1754578696::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Overworld Camera.tscn::PackedScene/PackedScene::411482094156174668::1754615880::0::1::::<><><>0<>0<><>::uid://ct0vmbbj50gdl::::res://Overworld/room.gd<>uid://dakraqewmrdwf::::res://Overworld/Sprites/Blocks/Question Block.tscn<>uid://plv4fonjs4si::::res://Overworld/Sprites/Blocks/Player.tscn<>uid://88t363lao06k::::res://Overworld/discord_rpc.gd<>uid://dkram2yh3iuev::::res://Overworld/Camera/Tileset.png
-Overworld Test.tscn::PackedScene/PackedScene::8656030378006204048::1754615880::0::1::::<><><>0<>0<><>::uid://ct0vmbbj50gdl::::res://Overworld/room.gd<>uid://plv4fonjs4si::::res://Overworld/Sprites/Blocks/Player.tscn<>uid://88t363lao06k::::res://Overworld/discord_rpc.gd<>uid://dkram2yh3iuev::::res://Overworld/Camera/Tileset.png<>uid://dakraqewmrdwf::::res://Overworld/Sprites/Blocks/Question Block.tscn
+Overworld Camera.tscn::PackedScene/PackedScene::411482094156174668::1754654530::0::1::::<><><>0<>0<><>::uid://ct0vmbbj50gdl::::res://Overworld/room.gd<>uid://dakraqewmrdwf::::res://Overworld/Sprites/Blocks/Question Block.tscn<>uid://plv4fonjs4si::::res://Overworld/Sprites/Blocks/Player.tscn<>uid://88t363lao06k::::res://Overworld/discord_rpc.gd<>uid://dkram2yh3iuev::::res://Overworld/Camera/Tileset.png
+Overworld Test.tscn::PackedScene/PackedScene::8656030378006204048::1754656277::0::1::::<><><>0<>0<><>::uid://ct0vmbbj50gdl::::res://Overworld/room.gd<>uid://plv4fonjs4si::::res://Overworld/Sprites/Blocks/Player.tscn<>uid://88t363lao06k::::res://Overworld/discord_rpc.gd<>uid://dkram2yh3iuev::::res://Overworld/Camera/Tileset.png<>uid://dakraqewmrdwf::::res://Overworld/Sprites/Blocks/Question Block.tscn
 room.gd::GDScript/GDScript::6159335381253419409::1754574508::0::1::::<>Node2D<><>0<>0<><>::
 ::res://Overworld/Camera/::1754578919
 Tileset.png::CompressedTexture2D/CompressedTexture2D::7896267794367064909::1754560557::1754560562::1::::<><><>0<>0<>b40893d8e002771985631f9687da7b74<>res://.godot/imported/Tileset.png-423d9d5a0143f5e4b83730e908336994.ctex::
 ::res://Overworld/Sprites/::1754578919
 Luigi Sprite OW.png::CompressedTexture2D/CompressedTexture2D::8401549058176168240::1754536644::1754536645::1::::<><><>0<>0<>b67042e84b10c6b244c107c80ae49ca8<>res://.godot/imported/Luigi Sprite OW.png-7478747f6ad18b6060e8dc0137fe1db6.ctex::
 Mario Sprite OW.png::CompressedTexture2D/CompressedTexture2D::4721166642766172918::1754536632::1754536636::1::::<><><>0<>0<>4b1d87213db759adba01c8cb43b5cfef<>res://.godot/imported/Mario Sprite OW.png-e02c06f3cd72c5daf9c0fc9ed1131b9e.ctex::
-::res://Overworld/Sprites/Blocks/::1754615880
+::res://Overworld/Sprites/Blocks/::1754654529
 1UP.png::CompressedTexture2D/CompressedTexture2D::7910474210845299039::1754554466::1754554468::1::::<><><>0<>0<>fc5c23011ae063bb83dca9877b0bc05b<>res://.godot/imported/1UP.png-eb3f34dfab6625c387c36eee1fec8129.ctex::
 Block Shadow.png::CompressedTexture2D/CompressedTexture2D::3080329044670290516::1754548726::1754548727::1::::<><><>0<>0<>61afb498c98aebc51ff13a8bf32c95f3<>res://.godot/imported/Block Shadow.png-d58a1ff0b36081820f6c259ac7ebe7e0.ctex::
 Boots.png::CompressedTexture2D/CompressedTexture2D::8780578765436521040::1754557928::1754557930::1::::<><><>0<>0<>366fd470f25838f0b8ca5471d0f4a84d<>res://.godot/imported/Boots.png-0bfbdac46d8441c8f22804eaa9cc9204.ctex::
@@ -89,7 +88,7 @@ Glove.png::CompressedTexture2D/CompressedTexture2D::2132706380145956817::1754557
 Herb.png::CompressedTexture2D/CompressedTexture2D::3634509235169647457::1754554841::1754554845::1::::<><><>0<>0<>edc30cbea6d058a210a09a8e965a54c8<>res://.godot/imported/Herb.png-4cdfc14bbeeaefd4f022ce572cf3a3dd.ctex::
 Mushroom.png::CompressedTexture2D/CompressedTexture2D::6610210974159031907::1754553312::1754553329::1::::<><><>0<>0<>6926a6b1de048b8f7c4b84a9c1729998<>res://.godot/imported/Mushroom.png-a0bfd95012ae8ddf4edfe1adc2e0e7ed.ctex::
 NUT.png::CompressedTexture2D/CompressedTexture2D::444443040398947939::1754554639::1754554641::1::::<><><>0<>0<>1a9fc54c8e7e04d8eb754bbb9739ef4b<>res://.godot/imported/NUT.png-2f0339a3982f5367efa4f8ed69818f4e.ctex::
-Player.tscn::PackedScene/PackedScene::1076867939583922720::1754615880::0::1::::<><><>0<>0<><>::uid://bk53nw7ahed63::::res://Overworld/mario.gd<>uid://b8i76pdyxcohq::::res://Overworld/Sprites/Mario Sprite OW.png<>uid://b3gu4ffv2cnl6::::res://Overworld/luigi.gd<>uid://drx1jybsucoqi::::res://Overworld/Sprites/Luigi Sprite OW.png
+Player.tscn::PackedScene/PackedScene::1076867939583922720::1754654529::0::1::::<><><>0<>0<><>::uid://bk53nw7ahed63::::res://Overworld/mario.gd<>uid://b8i76pdyxcohq::::res://Overworld/Sprites/Mario Sprite OW.png<>uid://b3gu4ffv2cnl6::::res://Overworld/luigi.gd<>uid://drx1jybsucoqi::::res://Overworld/Sprites/Luigi Sprite OW.png
 Question Block.png::CompressedTexture2D/CompressedTexture2D::5871881934633063351::1754548426::1754548601::1::::<><><>0<>0<>b0b8f81ba14d33300288b5f30263c27c<>res://.godot/imported/Question Block.png-06e38dec1aac57288b1cfebe43874a48.ctex::
 Question Block.tscn::PackedScene/PackedScene::7180938865066038533::1754559490::0::1::::<><><>0<>0<><>::uid://cpwnbjoxdtg1d::::res://Overworld/Sprites/Blocks/Question Block.png<>uid://breebqcdyf20i::::res://Overworld/Sprites/Blocks/question_block.gd<>uid://bj5etmeyf765m::::res://Overworld/Sprites/Blocks/Block Shadow.png<>uid://cb2qoft2c3540::::res://Overworld/Sprites/Blocks/Empty Question Block.png<>uid://dkx5mb28aafkx::::res://Overworld/Sprites/Blocks/1UP.png<>uid://dnhna8iyxgcvc::::res://Overworld/Sprites/Blocks/Coin.png<>uid://dxdm346ewnn17::::res://Overworld/Sprites/Blocks/Boots.png<>uid://c1gbhdt1fe4s2::::res://Overworld/Sprites/Blocks/Mushroom.png<>uid://hwhc5i4dpuqt::::res://Overworld/Sprites/Blocks/Chest.png<>uid://5ndmlbix45nh::::res://Overworld/Sprites/Blocks/Glove.png<>uid://glj6ag7fr6l0::::res://Overworld/Sprites/Blocks/NUT.png<>uid://br1t3or4tydhx::::res://Overworld/Sprites/Blocks/Herb.png<>uid://drnlmlb1bc8er::::res://Overworld/Sprites/Blocks/Syrup.png<>uid://lhp60leypxm8::::res://Overworld/Sprites/Blocks/Slacks.png<>uid://c4fe2cc210ml1::::res://Overworld/Sprites/Blocks/Socks.png
 question_block.gd::GDScript/GDScript::3588134033952679502::1754572392::0::1::::<>Area2D<><>0<>0<><>::
