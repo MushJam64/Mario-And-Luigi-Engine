@@ -21,13 +21,16 @@ script = ExtResource("1_wpbr0")
 [node name="MarioSprite" type="Sprite2D" parent="Mario" groups=["Player"]]
 z_index = 2
 texture_filter = 1
+position = Vector2(-1, 0)
 texture = ExtResource("2_cvrjh")
 
 [node name="Camera2D" type="Camera2D" parent="Mario"]
+visible = false
 zoom = Vector2(2, 2)
 position_smoothing_speed = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mario" groups=["Player"]]
+visible = false
 z_as_relative = false
 position = Vector2(-0.5, 16.5)
 shape = SubResource("RectangleShape2D_g0mvu")

@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
-@export var follow_delay: int = 8
+@export var follow_distance: float = 25.0
 @export var move_speed: float = 120.0
-@export var stop_threshold: float = 10.0
 
 @export var jump_height: float = 40.0
 @export var jump_duration: float = 0.45
@@ -31,24 +30,30 @@ func follow_mario(delta):
 	if not mario_node:
 		return
 
-	# Grab Mario's position history
-	if mario_node.has_method("get_position_history"):
-		var history = mario_node.get_position_history()
-		if history.size() > follow_delay:
-			target_position = history[follow_delay]
+	var snapped_dir = Vector2.ZERO
+	if mario_node.velocity.length_squared() > 0:
+		if mario_node.has_method("get_8_direction"):
+			snapped_dir = mario_node.get_8_direction(mario_node.velocity.normalized())
 
+	# Only update target when Mario is moving
+	if snapped_dir != Vector2.ZERO:
+		# Always put Luigi BEHIND Mario
+		target_position = mario_node.global_position - snapped_dir * follow_distance
+
+		# --- Clamp check so Luigi never overshoots in front ---
+		var vec_to_mario = mario_node.global_position - global_position
+		if vec_to_mario.dot(snapped_dir) < 0:
+			# If Luigi is already in front, snap him back behind
+			target_position = mario_node.global_position - snapped_dir * follow_distance
+
+	# Move Luigi toward target
 	var offset = target_position - global_position
-	var distance = offset.length()
-
-	if distance > stop_threshold:
-		var move_dir = offset.normalized()
-
-		# --- Snap Luigi’s movement to the same 8-direction grid as Mario ---
-		var snapped_dir = get_8_direction(move_dir)
-
-		velocity = snapped_dir * move_speed
+	if offset.length() > 2.0:
+		var snapped_offset = get_8_direction(offset.normalized())
+		velocity = snapped_offset * move_speed
 	else:
 		velocity = Vector2.ZERO
+
 
 func handle_jump_z(delta):
 	if is_jumping:
@@ -71,7 +76,7 @@ func handle_jump_z(delta):
 func is_falling() -> bool:
 	return is_jumping and jump_velocity_z < 0 and jump_z > 0
 
-# --- Copy of Mario’s 8-direction snap ---
+# --- Same snap system as Mario ---
 func get_8_direction(dir: Vector2) -> Vector2:
 	if dir == Vector2.ZERO:
 		return Vector2.ZERO
