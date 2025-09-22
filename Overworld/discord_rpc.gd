@@ -3,7 +3,7 @@ func _ready():
 	DiscordRPC.app_id = 1402830885325373532 # Application ID
 	DiscordRPC.details = Globals.location
 	DiscordRPC.state = Globals.room
-	DiscordRPC.large_image = "https://poly.dance/swag.gif" # Image key from "Art Assets"
+	DiscordRPC.large_image = "mario_and_luigi_engine_logo" # Image key from "Art Assets"
 	DiscordRPC.large_image_text = "The Mario And Luigi Engine"
 	DiscordRPC.small_image = "mushroom_icon" # Image key from "Art Assets"
 	DiscordRPC.small_image_text = "Exploring a vast world"

@@ -1,5 +1,4 @@
 res://Battle/Sprites/BattleBlocks.tscn
-res://Overworld/discord_rpc.gd
 res://Overworld/Overworld Test.tscn
 res://Overworld/Sprites/Blocks/Player.tscn
 res://Overworld/Overworld Camera.tscn
@@ -7,3 +6,6 @@ res://Battle/Test Battle.tscn
 res://Dialogue/dialogue_ui.tscn
 res://Dialogue/Test Dialogue.tscn
 res://addons/discord-rpc-gd/restart_window.tscn
+res://Overworld/discord_rpc.gd
+res://Overworld/mario.gd
+res://Overworld/luigi.gd

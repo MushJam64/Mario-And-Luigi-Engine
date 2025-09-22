@@ -35,17 +35,36 @@ func _physics_process(delta):
 		set_z_index(2)
 
 func handle_input(delta):
-	var input_vec = Vector2(
-		Input.get_action_strength("Right") - Input.get_action_strength("Left"),
-		Input.get_action_strength("Down") - Input.get_action_strength("Up")
-	)
+	var input_vec = Vector2.ZERO
 
+	# --- Controller Stick ---
+	var stick_x = Input.get_joy_axis(DEVICE_ID, JOY_AXIS_LEFT_X)
+	var stick_y = Input.get_joy_axis(DEVICE_ID, JOY_AXIS_LEFT_Y)
+
+	# Deadzone check (treat as digital press if past threshold)
+	var right = stick_x > DEADZONE
+	var left = stick_x < -DEADZONE
+	var down = stick_y > DEADZONE
+	var up = stick_y < -DEADZONE
+
+	# --- Combine stick as digital input ---
+	if right: input_vec.x += 1
+	if left:  input_vec.x -= 1
+	if down:  input_vec.y += 1
+	if up:    input_vec.y -= 1
+
+	# --- Keyboard fallback ---
+	input_vec.x += Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	input_vec.y += Input.get_action_strength("Down") - Input.get_action_strength("Up")
+
+	# Snap to 8-direction like keyboard
 	if input_vec.length_squared() > 0:
 		var snapped_vec = get_8_direction(input_vec.normalized())
 		velocity = snapped_vec * move_speed
 	else:
 		velocity = Vector2.ZERO
 
+	# Jump (works with both keyboard & controller)
 	if Input.is_action_just_pressed("Jump_A") and not is_jumping:
 		jump_velocity_z = (4 * jump_height) / jump_duration
 		is_jumping = true

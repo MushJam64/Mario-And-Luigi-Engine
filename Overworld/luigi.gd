@@ -31,22 +31,24 @@ func follow_mario(delta):
 	if not mario_node:
 		return
 
+	# Grab Mario's position history
 	if mario_node.has_method("get_position_history"):
 		var history = mario_node.get_position_history()
 		if history.size() > follow_delay:
 			target_position = history[follow_delay]
 
-	# Smoothly move toward target
 	var offset = target_position - global_position
 	var distance = offset.length()
 
 	if distance > stop_threshold:
-		# Smooth out jitter by only moving if far enough
 		var move_dir = offset.normalized()
-		velocity = move_dir * move_speed
+
+		# --- Snap Luigi’s movement to the same 8-direction grid as Mario ---
+		var snapped_dir = get_8_direction(move_dir)
+
+		velocity = snapped_dir * move_speed
 	else:
 		velocity = Vector2.ZERO
-
 
 func handle_jump_z(delta):
 	if is_jumping:
@@ -68,3 +70,23 @@ func handle_jump_z(delta):
 
 func is_falling() -> bool:
 	return is_jumping and jump_velocity_z < 0 and jump_z > 0
+
+# --- Copy of Mario’s 8-direction snap ---
+func get_8_direction(dir: Vector2) -> Vector2:
+	if dir == Vector2.ZERO:
+		return Vector2.ZERO
+
+	var angle = dir.angle()
+	var octant = int(round(angle / (PI / 4.0))) % 8
+
+	match octant:
+		0: return Vector2.RIGHT
+		1: return Vector2(1, 1).normalized()
+		2: return Vector2.DOWN
+		3: return Vector2(-1, 1).normalized()
+		4: return Vector2.LEFT
+		5: return Vector2(-1, -1).normalized()
+		6: return Vector2.UP
+		7: return Vector2(1, -1).normalized()
+
+	return dir
