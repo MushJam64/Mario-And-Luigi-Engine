@@ -1,13 +1,9 @@
-res://DialougeTest.gd
-res://Test Dialouge.tscn
 res://Battle/Sprites/BattleBlocks.tscn
+res://Overworld/discord_rpc.gd
 res://Overworld/Overworld Test.tscn
 res://Overworld/Sprites/Blocks/Player.tscn
 res://Overworld/Overworld Camera.tscn
 res://Battle/Test Battle.tscn
-res://Dialouge/dialouge_ui.tscn
-res://dialouge_ui.gd
-res://Dialouge/Test Dialouge.tscn
-res://Dialogue/dialouge_ui.tscn
-res://Dialogue/Test Dialouge.tscn
+res://Dialogue/dialogue_ui.tscn
 res://Dialogue/Test Dialogue.tscn
+res://addons/discord-rpc-gd/restart_window.tscn

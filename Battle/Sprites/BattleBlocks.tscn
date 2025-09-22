@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c410pihq8yn4d"]
+[gd_scene load_steps=12 format=3 uid="uid://c410pihq8yn4d"]
 
 [ext_resource type="Script" uid="uid://dg86jpoa13f71" path="res://Battle/Sprites/battle_blocks.gd" id="1_bgk18"]
 [ext_resource type="Texture2D" uid="uid://bsmgnwwh4m5ep" path="res://Battle/Sprites/Jump.png" id="1_t1foj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dvp3pj7fuxr0q" path="res://Battle/Sprites/Item.png" id="6_u4n6x"]
 [ext_resource type="Texture2D" uid="uid://c2s2xw0v6sg84" path="res://Battle/Sprites/Flee.png" id="7_wuy37"]
 [ext_resource type="Texture2D" uid="uid://d2mftvroj2ql4" path="res://Battle/Sprites/Badge.png" id="8_wuy37"]
+[ext_resource type="Script" uid="uid://88t363lao06k" path="res://Overworld/discord_rpc.gd" id="11_lf81p"]
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("frontBlock", "rightfrontBlock", "rightbackBlock", "backBlock", "leftbackBlock", "leftfrontBlock")]
 script = ExtResource("1_bgk18")
@@ -79,3 +80,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.346, 0, -1.442)
 billboard = 1
 texture_filter = 0
 texture = ExtResource("2_pfhqu")
+
+[node name="DiscordRPC" type="Node" parent="."]
+script = ExtResource("11_lf81p")
